@@ -1,0 +1,104 @@
+html, body {
+	text-align: center;
+}
+.center-txt {
+	text-align: center;
+}
+.wrapper {
+	width: 80%;
+}
+.container-fluid {
+	/*margin: auto;*/
+	display: block !important;
+	text-align: center;
+}
+
+.navbar-brand {
+	color: orange;
+}
+
+#board {
+	border: 2px solid pink;
+	margin-left: -15%;
+	overflow: scroll;
+}
+
+
+
+.position-left {
+	display: inline-block;
+	margin-left: 5%;
+}
+.position-center {
+	display: block !important;
+	margin-left: 30%;
+	/*margin: auto;*/
+}
+.position-right {
+	float: right;
+}
+
+.form-control {
+	display: inline-block !important;
+}
+
+form {
+	padding-bottom: 8%;
+}
+
+img {
+	height: 100px;
+	width: 180px;
+	display: inline-block;
+	/*transform: scale(0.2);*/
+}
+
+.option {
+	display: inline-block;
+}
+
+ul li {
+	list-style: none;
+	margin-top: 5%;
+}
+
+#tabs {
+	display: inline-block;
+	/*border: 2px solid gray;*/
+	width: 70%;
+	height: 100px;
+	margin-left: -8%;
+	position: relative;
+}
+
+.noshow {
+	display: none !important;
+}
+.show {
+	display: inline-block;
+}
+
+#image-uploader #img {
+	height: 100px;
+	width: 200px;
+}
+
+/*#tabs .btn {
+	margin-top: 10%;	
+}*/
+
+/*#left-tab {
+	position: absolute;
+	margin-left: 5%;
+}
+
+#center-tab {
+	width: 24%;
+	position: absolute;
+	margin-left: 20%;	
+}
+
+#right-tab {
+	position: absolute;
+	margin-left: 85%;
+}*/

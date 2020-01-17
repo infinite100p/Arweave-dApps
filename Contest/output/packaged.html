@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Test</title>
+  <link type="text/css"><style>
+h3 {
+	font-weight: bold;
+}
+</style>
+</head>
+<body>
+  <h3>This is a test.</h3>
+  <script type="text/javascript">const Arweave=require("arweave/node"),instance=Arweave.init({host:"127.0.0.1",port:1984,protocol:"http"}),address="b5mY3ct4snWkJ1juIbcraodAxL5B2x5d";arweave.wallets.getBalance(address).then(e=>{let o=e,a=arweave.ar.winstonToAr(e);console.log(o+"winston"),console.log(a+"AR")});</script>
+</body>
+</html>

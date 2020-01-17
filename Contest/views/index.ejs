@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>AR Contest</title>
+    <link rel="stylesheet" type="text/css" href="../public/styles.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css">
+
+    <script
+    src="https://code.jquery.com/jquery-3.4.1.min.js"
+    integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+    crossorigin="anonymous"></script>
+ 
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-sm bg-dark">
+        <div class="container-fluid">
+            <div class="navbar-header"><a class="navbar-brand center" href="/">AR Contest</a></div>
+            <ul class="navbar-nav">
+                <li class="nav-item"></li>
+                <%if (logged) {%>
+                    <!-- Log Out -->
+                   <a class="nav-link" href="/logout"> Log Out</a>
+                <%}%>
+
+                <br>
+        </div>
+    </nav><br>
+
+<!-- User logged in: enter portal -->
+<!-- show iframe + buttons -->
+<%if (logged) {%>
+    <h5>logged in</h5>
+
+    <h4 class="center-txt">This or That</h4><br>    
+
+<div class="wrapper position-center">
+
+
+<div id="container">
+  <div id="tabs" class="">
+      <div class="row">
+      <div class="col-sm">
+        <a href = '/contest/vote' target="preview"><i class="btn btn-info fa fa-plus"> Vote </i></a>
+     </div>
+
+    <div class="row">
+      <a href = '/contest/new' target="preview"><i class="btn btn-info fa fa-plus"> Add New Contest </i></a>  
+
+    <div class="col-sm">
+      <a href = '/contest/old' target="preview"><i class="btn btn-info fa fa-plus"> Past Winners </i></a>
+    </div>
+    <br>
+  </div>  
+  </div>
+</div>
+
+  <iframe id="board" class="center_form" name="preview" src="" style='height: 800px; width: 80%;' frameborder="2" scrolling="no">
+    <div id="content">Hi there</div>
+  </iframe>
+
+
+      <h6 class = "center-txt")>Previous Contests </h6> 
+      <ul>
+
+
+        <%txids.forEach(function(txid){%>
+              <!-- <li><%=txid%></li>    -->
+              <li id = "<%=txid%>">
+                <a href = <%='/contest/' + txid %> target="preview">
+                  <%= '/contest/' + txid %>
+                </a>
+              </li> 
+              <h6 id="tx_status"></h6>  
+              <h6>Status: </h6>
+              </ul>
+       <%})%>        
+      </ul>  
+      <div id="txData">
+        All tx data: <%=JSON.stringify(allTxData)%>
+      </div>          
+</div>
+
+<!-- END wrapper -->
+
+
+<% } else { %>   
+
+<!-- user not logged in -->
+<!-- Request private key file -->
+
+   <div class = "card col-md-5 mx-auto")>
+    <form action="/privateKey" method="POST">
+      <label for="privateKey">Private Key File</label>
+     <div class="form-group">
+        <input id="privateKey" class=".form-control" type='file' name = "privateKey" accept=".json" class = "col-lg-15" onchange="getData()">
+      </div>
+      <div class="form-group">
+        <input id="jwk" class="form-control" type='hidden' name='jwk' value= ''>
+      </div>
+      <input id="login-btn" class="btn btn-danger" type="submit" value="Submit">
+    </form>
+  </div>         
+
+<%}%> 
+
+    <!--  PRIVATE KEY -->
+<!--     
+    <div class="card col-md-5 mx-auto">
+        <form class="text-center mx-auto" method="POST">
+            <div class="form-group"><label for="key">Private Key File</label><input class="form-control col-lg-15" id="key" type="file" name="key" accept=".json" onchange="getData()"></div>
+            <div class="form-group">
+                <input class="form-control" id="jwk" type="hidden" name="jwk" value=""></div>
+            <button class="btn btn-primary" type="submit">Submit</button>
+        </form>
+    </div> -->
+
+<!--     <script type="text/javascript" src="public/js/jquery-3.3.1.min.js"></script> -->
+    <script
+    src="https://code.jquery.com/jquery-3.4.1.min.js"
+    integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+    crossorigin="anonymous"></script>
+
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js"></script>    
+    <script src="../public/js/index.js"></script>    
+    <!-- <script src="public/js/main.js"></script>     -->
+    <!-- <script src="app.js"></script>     -->
+    <!-- <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"></script> -->
+
+</body>
+
+</html>

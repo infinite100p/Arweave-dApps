@@ -1,0 +1,8 @@
+<%
+	getTxStatus = async function(txid) {
+		const status = await arweave.transactions.getStatus(txid).then(status => {
+		    console.log(`Tx Id: ${txid} status: ${status}`); // 200
+		})
+		return status;	
+	}
+%>

@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Create Contest</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css">	
+	<link rel="stylesheet" type="text/css" href="../public/styles.css">
+
+	<meta http-equiv="Content-type" content="application/x-www-form-urlencoded; charset=UTF-8"/>	
+
+</head>
+<body>
+	<a href="./js/contest-new.js">JS Link</a>
+	<div class="form-group">
+		Select media type:
+		<select id="ftSelector" onchange="">
+		  <option value="image">Image</option>
+		  <option value="text">Text</option>
+		  <option value="audio">Audio</option>
+		</select>
+	</div>
+
+	<!-- Test Multer - Avatar -->
+<!-- 	<form action="/profile" method="post" enctype="multipart/form-data">
+	  <input type="file" name="avatar" />
+	  <input class="btn btn-danger" type="submit" value="Upload"> 
+	</form>	 -->
+
+	<!-- Image -->
+
+    <form id="image-uploader" class="noshow" action="/create-contest" method="POST" encType="multipart/form-data">
+      <div class="center-txt">Upload Image:</div>
+		<br />
+		<label for="image1">Image 1:</label>
+		<input id="img1" class="file1 upld" type='file' name="img1" accept="image/*"/>
+		<br/>
+		
+		<img style="width:95px" id="image1" src="#" alt="preview image" />
+
+		<br/>
+<!-- 		 <label for="image1">Image 2:</label>
+		<input id="file2" class="file2 upld" type='file' name="img2" accept="image/*" />
+		<br/>
+		<img style="width:95px" id="image2" src="#" alt="preview image" />  -->
+		  
+		<br/> <p></p>
+		
+		<button id="upload-btn" class="btn btn-danger" type="submit" >Upload</button> 		
+	</form>
+
+	<!-- <input id="testbtn" class="btn btn-danger" type="submit" value="Test">  -->
+    <!--  <div class="form-group">
+        <input id="image-upload" class=".form-control ft" type='file' name = "ft" accept="image/*" class = "col-lg-15" onchange="processUpload()">
+      </div>
+      <div class="form-group">
+        <input id="image1" class="form-control retrieved" type='hidden' name='image1' value= ''>
+      </div>
+  	</form>       -->
+
+  	<!-- Text -->
+    <form id="text-uploader" class="noshow" action="/create-contest2" method="POST">
+	    	<!-- TEXT 1 -->
+	     <h5>Enter text 1</h5>
+	     <div class="form-group">
+	      <input type="text" name="txt1">
+	      <br>  
+	      </div>   
+
+	     <h5>Enter text 2</h5>
+	     <div class="form-group">
+	      <input type="text" name="txt2"><br>
+	  	 </div>
+		<input class="btn btn-danger" type="submit" value="Submit"> 	  	 
+	</form>	
+
+
+	  	<!-- Audio -->
+	    <form id="audio-uploader" class="noshow" action="/upload-audio" method="POST" enctype="multipart/form-data">
+	      <label for="ft">Upload Audio</label>
+	     <div class="form-group">
+	        <input class=".form-control other" type='file' name = "other" accept="audio/*" class = "col-lg-15" onchange="processUpload()">
+	      </div>
+	      <div class="form-group">
+	        <input class="form-control retrieved" type='hidden' name='retrieved' value= ''>
+	      </div>
+		<input class="btn btn-danger" type="submit" value="Submit"> 	      
+  	</form>
+
+
+
+	<!-- <div>
+		<input id="upload" class="" name = "upload" accept="image/*" class = "col-lg-15" onchange="getData()"> 		
+	</div>
+ -->
+<!-- 		-->
+	
+<!-- 
+	<div class="option1">
+		<input id="jwk" class="form-control" type='hidden' name='jwk' value= ''>
+	</div>
+
+	<div class="option2">
+		<input id="jwk" class="form-control" type='hidden' name='jwk' value= ''>
+	</div> -->
+
+<!-- 	<br/>
+	<input class="btn btn-danger" type="submit" value="Submit"> -->
+
+	<script
+	  src="https://code.jquery.com/jquery-3.4.1.min.js"
+	  integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+	  crossorigin="anonymous"></script>
+
+	<script src="/socket.io/socket.io.js"></script>
+
+ <script type="text/javascript" src="../public/js/contest-new-output.js"></script>
+<!-- <script type="text/javascript" src="${pageContext.request.contextPath}/public/js/contest-new.js"></script> -->
+
+</body>
+</html>
